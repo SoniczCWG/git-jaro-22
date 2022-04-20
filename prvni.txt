@@ -21,11 +21,3 @@ d
 
 daw
 d
-aw
-da
-def 021 ( int a) { return "dafasef"}
-
-
-ahoj
-
-nova fce {}
