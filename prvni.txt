@@ -23,7 +23,4 @@ daw
 d
 aw
 da
-d
-awd
-awdawd
-da
+def 021 ( int a) { return "dafasef"}
