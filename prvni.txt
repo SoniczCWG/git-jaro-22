@@ -2,4 +2,10 @@ fasdf
 fserfseaf
 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
 
-daddawdawdawd
+daddawdawdawd 
+
+import time
+
+sleep(1)
+
+nova funkce { return 1123; }
