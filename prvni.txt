@@ -9,3 +9,5 @@ import time
 sleep(1)
 
 nova funkce { return 1123; }
+
+#tfrhztthztfhzth komentář k další práci co je třeba udělat
