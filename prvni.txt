@@ -20,4 +20,16 @@ d
 
 
 daw
+<<<<<<< HEAD
 d
+=======
+d
+aw
+da
+def 021 ( int a) { return "dafasef"}
+
+
+ahoj
+cfeggfhbchfhbhcdcdrhdhh
+nova fce {}
+>>>>>>> refs/remotes/origin/master
