@@ -23,3 +23,402 @@ ahoj
 cfeggfhbchfhbhcdcdrhdhh
 nova fce {}
 >>>>>>> refs/remotes/origin/master
+
+
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 703 bytes | 351.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/SoniczCWG/git-jaro-22.git
+   670452b..ff5b1b4  novavetev -> novavetev
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (novavetev)
+$ gitk --all
+
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (novavetev)
+$
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (novavetev)
+$ git switch master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git merge novavetev
+Updating d9ce198..ff5b1b4
+Fast-forward
+ prvni.txt | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ gitk --all
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ gitk --all
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git merge novavetev
+Already up to date.
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git branch rychlejsiclassa
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git switch rychlejsiclassa
+Switched to branch 'rychlejsiclassa'
+M       prvni.txt
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (rychlejsiclassa)
+$ git commit prvni.add
+error: pathspec 'prvni.add' did not match any file(s) known to git
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (rychlejsiclassa)
+$ git commit add prvni.txt
+error: pathspec 'add' did not match any file(s) known to git
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (rychlejsiclassa)
+$ git add prvni.txt
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (rychlejsiclassa)
+$ git commit -m "rychlejsi test funkcí s numpy"
+[rychlejsiclassa 5250505] rychlejsi test funkcí s numpy
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (rychlejsiclassa)
+$ git push
+fatal: The current branch rychlejsiclassa has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin rychlejsiclassa
+
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (rychlejsiclassa)
+$ ^C
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (rychlejsiclassa)
+$ git push --set-upstream origin rychlejsiclassa
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 313 bytes | 313.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'rychlejsiclassa' on GitHub by visiting:
+remote:      https://github.com/SoniczCWG/git-jaro-22/pull/new/rychlejsiclassa
+remote:
+To https://github.com/SoniczCWG/git-jaro-22.git
+ * [new branch]      rychlejsiclassa -> rychlejsiclassa
+Branch 'rychlejsiclassa' set up to track remote branch 'rychlejsiclassa' from 'origin'.
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (rychlejsiclassa)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git merge rychlejsiclassa
+Updating ff5b1b4..5250505
+Fast-forward
+ prvni.txt | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git reset --hard
+HEAD is now at 5250505 rychlejsi test funkcí s numpy
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git commit -m "new func"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   prvni.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vs/
+        prvni - kopie.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git commit -ä
+error: unknown non-ascii option in string: `-ä'
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --signoff         add a Signed-off-by trailer
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <mode>      how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --ahead-behind        compute full ahead/behind values
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git add prvni.txt
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git commit -m "new func"
+[master 5828c81] new func
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git commit -m "implementation"
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   prvni.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vs/
+        prvni - kopie.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git add prvni.txt
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git commit -m "implementation"
+[master a7b34bb] implementation
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git log --oneline
+a7b34bb (HEAD -> master) implementation
+5828c81 new func
+5250505 (origin/rychlejsiclassa, rychlejsiclassa) rychlejsi test funkcí s numpy
+ff5b1b4 (origin/novavetev, origin/master, novavetev) oprava chyby v inkremetování indexu ve smyčce pole
+4c72044 fajront
+670452b nova funkce
+d9ce198  další řádek (3.)
+2d492ab zkouska noveho tokenu
+9038ce7 druhý řádek přidán
+0ce813d first commit test
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git checkout 5828c81
+Note: switching to '5828c81'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 5828c81 new func
+
+student@Win2021V09 MINGW64 /c/Kurs/Git ((5828c81...))
+$ git checkout 4c72044
+Previous HEAD position was 5828c81 new func
+HEAD is now at 4c72044 fajront
+
+student@Win2021V09 MINGW64 /c/Kurs/Git ((4c72044...))
+$ git log --oneline
+4c72044 (HEAD) fajront
+670452b nova funkce
+d9ce198  další řádek (3.)
+2d492ab zkouska noveho tokenu
+9038ce7 druhý řádek přidán
+0ce813d first commit test
+
+student@Win2021V09 MINGW64 /c/Kurs/Git ((4c72044...))
+$ git commit -am "bugfix"
+[detached HEAD e25122a] bugfix
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git ((e25122a...))
+$ git push
+fatal: You are not currently on a branch.
+To push the history leading to the current (detached HEAD)
+state now, use
+
+    git push origin HEAD:<name-of-remote-branch>
+
+
+student@Win2021V09 MINGW64 /c/Kurs/Git ((e25122a...))
+$ git switch master
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  e25122a bugfix
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> e25122a
+
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git commit -am "test bug conflict"
+[master b5449ed] test bug conflict
+ 1 file changed, 1 insertion(+), 9 deletions(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git push
+To https://github.com/SoniczCWG/git-jaro-22.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/SoniczCWG/git-jaro-22.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 700 bytes | 70.00 KiB/s, done.
+From https://github.com/SoniczCWG/git-jaro-22
+   df938c2..e848e39  master     -> origin/master
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git merge
+Auto-merging prvni.txt
+CONFLICT (content): Merge conflict in prvni.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master|MERGING)
+$ git config --global core.editor notepad
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master|MERGING)
+$ git commit -am "pridan radek"
+[master e431ea7] pridan radek
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git commit -am "pridan radek"
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vs/Git/
+        .vs/VSWorkspaceState.json
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git push
+Enumerating objects: 19, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 1.00 KiB | 1.00 MiB/s, done.
+Total 9 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+To https://github.com/SoniczCWG/git-jaro-22.git
+   e848e39..e431ea7  master -> master
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git commit -am "pridano gfsrgfrgfsrfs"
+[master fcc6905] pridano gfsrgfrgfsrfs
+ 1 file changed, 1 insertion(+), 11 deletions(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 664 bytes | 44.00 KiB/s, done.
+From https://github.com/SoniczCWG/git-jaro-22
+   e431ea7..d7edf86  master     -> origin/master
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git merge
+Auto-merging prvni.txt
+hint: Waiting for your editor to close the file... unix2dos: converting file C:/Kurs/Git/.git/MERGE_MSG to DOS format...
+dos2unix: converting file C:/Kurs/Git/.git/MERGE_MSG to Unix format...
+Merge made by the 'recursive' strategy.
+ prvni.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 602 bytes | 602.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+To https://github.com/SoniczCWG/git-jaro-22.git
+   d7edf86..668db6e  master -> master
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$ git commit -am "pridan konflikt"
+[master af7eb0c] pridan konflikt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+student@Win2021V09 MINGW64 /c/Kurs/Git (master)
+$
