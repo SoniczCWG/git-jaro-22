@@ -24,3 +24,6 @@ d
 aw
 da
 def 021 ( int a) { return "dafasef"}
+
+
+0012(fasefe) #ajaja
