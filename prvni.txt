@@ -10,7 +10,7 @@ sleep(0)
 
 nova funkce { return 1123; }
 
-#tfrhztthztfhzth komentář k další práci co je třeba udělat
+#tfrhztthztfhzth komentář k další práci co je třeba udělatfsfe
 
 abc=[1,2,3]
 
